@@ -35,19 +35,19 @@ export class GeminiService {
     const parts: Part[] = [];
 
     if (imageData && targetAudience) {
-      prompt = `You are an expert social media marketer specializing in Facebook sales posts.
-      Analyze the following product image carefully. Identify the product, its key features, and its overall aesthetic.
-      Your task is to generate 3 distinct, highly engaging Facebook sales captions for this product, tailored specifically for the following target audience: "${targetAudience}".
+      prompt = `You are an expert social media marketer creating a Facebook sales post.
+      Your primary task is to analyze the provided product image. From the image alone, you must infer the product's name, key features, and the appropriate tone of voice (e.g., luxury, casual, playful).
 
-      Each caption MUST:
-      1. Be attractive and persuasive, written in a friendly and appealing tone.
-      2. Start with a strong hook to grab attention immediately.
-      3. Clearly highlight the product's main benefits (inferred from the image).
-      4. Include relevant, popular emojis to increase engagement and visual appeal.
-      5. End with a strong call-to-action (e.g., "Shop Now!", "DM to order", "Order yours today!").
-      6. Include 3-5 relevant hashtags (e.g., #productname #sale #style #musthave).
+      Based on your image analysis, generate 3 distinct and highly engaging Facebook sales captions. These captions must be specifically tailored for the following target audience: "${targetAudience}".
 
-      Return the captions as a JSON array of strings. For example: ["caption 1", "caption 2", "caption 3"]`;
+      Each of the 3 captions MUST include:
+      1. A compelling opening hook to grab attention.
+      2. Persuasive language that highlights the product's benefits, as inferred from the image.
+      3. Relevant and popular emojis to increase visual appeal and engagement.
+      4. 3-5 relevant and specific hashtags to improve reach.
+      5. A clear and strong call-to-action (e.g., "Shop the link in bio!", "DM us to order!", "Get yours today!").
+
+      Return ONLY a valid JSON array of 3 strings, with no other text or explanation. For example: ["caption 1", "caption 2", "caption 3"]`;
 
       parts.push({
         inlineData: {
