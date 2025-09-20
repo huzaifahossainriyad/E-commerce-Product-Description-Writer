@@ -1,0 +1,5 @@
+{
+  "name": "E-commerce Product Description Writer",
+  "description": "An AI-powered tool that generates compelling e-commerce product descriptions based on product name, features, target audience, and desired tone of voice using the Gemini API.",
+  "requestFramePermissions": []
+}

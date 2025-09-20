@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Facebook Post Generator</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Generate compelling Facebook sales captions and e-commerce product descriptions with AI. Upload an image and get engaging, emoji-rich content tailored to your audience.">
+  <meta name="keywords" content="AI, Gemini, Facebook Post, Product Description, E-commerce, Marketing, Copywriting, Angular, Social Media">
+  <meta name="author" content="AI Studio">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Custom animation for fading in generated content */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease-out forwards;
+    }
+  </style>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "rxjs": "https://aistudiocdn.com/rxjs@^7.8.2?conditions=es2015",
+      "rxjs/operators": "https://aistudiocdn.com/rxjs@^7.8.2/operators?conditions=es2015",
+      "rxjs/ajax": "https://aistudiocdn.com/rxjs@^7.8.2/ajax?conditions=es2015",
+      "rxjs/webSocket": "https://aistudiocdn.com/rxjs@^7.8.2/webSocket?conditions=es2015",
+      "rxjs/testing": "https://aistudiocdn.com/rxjs@^7.8.2/testing?conditions=es2015",
+      "rxjs/fetch": "https://aistudiocdn.com/rxjs@^7.8.2/fetch?conditions=es2015",
+      "@angular/compiler": "https://next.esm.sh/@angular/compiler@^20.1.6-0?external=rxjs",
+      "@angular/platform-browser": "https://next.esm.sh/@angular/platform-browser@^20.1.6-0?external=rxjs",
+      "@angular/common/http": "https://next.esm.sh/@angular/common@^20.1.6-0/http?external=rxjs",
+      "@angular/core": "https://next.esm.sh/@angular/core@^20.1.6-0?external=rxjs",
+      "@angular/common": "https://next.esm.sh/@angular/common@^20.1.6-0?external=rxjs",
+      "@google/genai": "https://next.esm.sh/@google/genai@^1.20.0?external=rxjs",
+      "@angular/forms": "https://next.esm.sh/@angular/forms@^20.1.6-0?external=rxjs"
+    }
+  }
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
