@@ -1,4 +1,3 @@
-// Fix: Created the GeminiService to encapsulate Gemini API calls.
 import { Injectable } from '@angular/core';
 import { GoogleGenAI, Type, Part } from '@google/genai';
 
@@ -35,19 +34,24 @@ export class GeminiService {
     const parts: Part[] = [];
 
     if (imageData && targetAudience) {
-      prompt = `You are an expert social media marketer creating a Facebook sales post.
-      Your primary task is to analyze the provided product image. From the image alone, you must infer the product's name, key features, and the appropriate tone of voice (e.g., luxury, casual, playful).
+      prompt = `You are an expert social media marketer specializing in creating high-converting Facebook sales posts.
 
-      Based on your image analysis, generate 3 distinct and highly engaging Facebook sales captions. These captions must be specifically tailored for the following target audience: "${targetAudience}".
+      An image of a product has been provided. Your primary task is to analyze this image to understand the product completely. From the image, you must infer:
+      - The likely name or type of the product.
+      - Its key features, materials, and benefits.
+      - The appropriate tone of voice for marketing it (e.g., luxury, casual, playful, professional).
 
-      Each of the 3 captions MUST include:
-      1. A compelling opening hook to grab attention.
-      2. Persuasive language that highlights the product's benefits, as inferred from the image.
-      3. Relevant and popular emojis to increase visual appeal and engagement.
-      4. 3-5 relevant and specific hashtags to improve reach.
-      5. A clear and strong call-to-action (e.g., "Shop the link in bio!", "DM us to order!", "Get yours today!").
+      After your analysis, generate 3 distinct and engaging Facebook sales captions. These captions must be specifically tailored for the following target audience: "${targetAudience}".
 
-      Return ONLY a valid JSON array of 3 strings, with no other text or explanation. For example: ["caption 1", "caption 2", "caption 3"]`;
+      Each caption must include:
+      1. A compelling hook to stop users from scrolling.
+      2. Persuasive language that highlights the product's benefits, derived from your image analysis.
+      3. Relevant emojis to increase visual appeal.
+      4. 3-5 specific hashtags to improve discoverability.
+      5. A clear call-to-action (e.g., "Shop Now!", "Send a DM to order!").
+
+      Return ONLY a valid JSON array of 3 strings. Do not include any other text, markdown, or explanation.
+      Example format: ["caption 1", "caption 2", "caption 3"]`;
 
       parts.push({
         inlineData: {
@@ -63,6 +67,7 @@ export class GeminiService {
       Product Name: ${name}
       Key Features & Benefits: ${features}
       Desired Tone of Voice: ${tone}
+      Target Audience: ${targetAudience}
 
       Return the descriptions as a JSON array of strings. For example: ["description 1", "description 2", "description 3"]
       `;
